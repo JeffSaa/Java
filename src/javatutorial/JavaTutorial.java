@@ -1,67 +1,30 @@
 package javatutorial;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Scanner;
+
+import model.Car; // Import the class, it is in other package
 
 public class JavaTutorial {
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         
-        writeFile();
-        readFile();
+        Scanner read = new Scanner(System.in);
+        
+        // Ask for the data
+        System.out.print("Owner here: ");
+        String owner = read.nextLine();
+        System.out.print("Id here: ");
+        String id = read.nextLine();
+        System.out.print("Years here: ");
+        int years = read.nextInt();
+        System.out.print("Km here: ");
+        float km = read.nextFloat(); // Decimal in Java is with <<,>>
+        
+        // Create the car
+        Car first_object = new Car(owner,id,years,km);
+        
+        System.out.println("You have a new car!!!");
     
-    }
-    
-    public static void writeFile() throws IOException{
-        
-        // Create a file
-        File f;
-        f = new File("MyFile.txt");
-        
-        // Create necesary objects
-        FileWriter fr = new FileWriter(f,true); // True value means dont will erase file's previous content
-        BufferedWriter bw = new BufferedWriter(fr);
-        PrintWriter pw = new PrintWriter(bw);
-        
-        // Write
-        pw.print("Same ");
-        pw.print("line!!!");
-        bw.newLine();
-        pw.println("Hi there!");
-        
-        // Close
-        pw.close();
-        bw.close();
-        fr.close();
-        
-    }
-    
-    public static void readFile() throws FileNotFoundException, IOException{
-        
-        // Create a file
-        File f;
-        f = new File("MyFile.txt");
-        
-        // Create necesary objects
-        FileReader fr = new FileReader(f);
-        BufferedReader br = new BufferedReader(fr);
-        
-        // In 'line' we save a file's line and write in console
-        String line;        
-        while (br.ready()) {
-            line = br.readLine();
-             System.out.println(line);
-        }
-        
-        // Close all
-         br.close();
-         fr.close();
-    }
+    }    
     
 }
