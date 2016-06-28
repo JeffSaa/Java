@@ -1,37 +1,24 @@
 package javatutorial;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-import model.Car;
+import model.ThreadTest;
 
 public class JavaTutorial {
     
     public static void main(String[] args) {
-        Scanner read = new Scanner(System.in);
         
-        ArrayList<Car> cars = new ArrayList<>(); // Create a car's arraylist
+        // Create 5 objects
+        ThreadTest t1 = new ThreadTest("Test 1");
+        ThreadTest t2 = new ThreadTest("Test 2");
+        ThreadTest t3 = new ThreadTest("Test 3");
+        ThreadTest t4 = new ThreadTest("Test 4");
+        ThreadTest t5 = new ThreadTest("Test 5");
         
-        for(int i = 0; i<4; i++){ // Ask for data
-            System.out.print("Owner here: ");
-            String owner;
-            owner = read.nextLine();
-            System.out.print("Id here: ");
-            String id = read.nextLine();
-            System.out.print("Years here: ");
-            int year = read.nextInt();
-            System.out.print("Km here: ");
-            float km = read.nextFloat();
-            read.nextLine();
-            Car car = new Car(owner,id,year,km); // First create a car
-            
-            cars.add(car); // And save in arraylist            
-        }
-        
-        // Now write the ArrayList(one way to do)
-        System.out.println("-----Car's owners-----");
-        for (int i = 0; i < cars.size(); i++) {
-            System.out.println((i+1)+") "+cars.get(i).getOwner());
-        }
+        // Run
+        t1.run();
+        t2.run();
+        t3.run();
+        t4.run();
+        t5.run();
         
     }
     
