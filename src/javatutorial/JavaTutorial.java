@@ -1,22 +1,23 @@
 package javatutorial;
 
-import java.util.Scanner; // Import the lib
-
 public class JavaTutorial {
     
     public static void main(String[] args) {
         
-        Scanner read = new Scanner(System.in); // This object we'll use later
+        sayHello(); // Call a subroutine
         
-        // Ask for user's data
-        System.out.print("Your name here: ");
-        String name = read.nextLine();
-        System.out.print("Your age here: ");
-        int years = read.nextInt();
-        
-        // Show the data
-        System.out.println("Hello "+name+", you have "+years+" years old.");
-        
-    }    
+        int result = calSum(5,3); // Call a function
+        System.out.println(result);
+    
+    }
+    
+    public static void sayHello(){
+        System.out.println("Hello!!!");
+    }
+    
+    public static int calSum(int x, int y){
+        int r = x+y;
+        return r; // Return a value
+    }
     
 }
