@@ -1,29 +1,22 @@
 package javatutorial;
 
+import java.util.Scanner; // Import the lib
+
 public class JavaTutorial {
     
     public static void main(String[] args) {
         
-        // With 'print' we can write in console in the same line
-        System.out.print("Is ");
-        System.out.print("the ");
-        System.out.print("line!!!");
+        Scanner read = new Scanner(System.in); // This object we'll use later
         
-        // Here write empry lines
-        System.out.println("");
-        System.out.println("");
+        // Ask for user's data
+        System.out.print("Your name here: ");
+        String name = read.nextLine();
+        System.out.print("Your age here: ");
+        int years = read.nextInt();
         
-        // With 'println' write in different line
-        System.out.println("Other");
-        System.out.println("Line!");
+        // Show the data
+        System.out.println("Hello "+name+", you have "+years+" years old.");
         
-        System.out.println("");
-        System.out.println("");
-        
-        // Concatenate
-        String name = "jeff";
-        System.out.println("Hello "+name);
-        
-    }
+    }    
     
 }
