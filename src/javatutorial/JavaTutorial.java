@@ -1,5 +1,6 @@
 package javatutorial;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import model.Car;
 
@@ -8,30 +9,30 @@ public class JavaTutorial {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         
-        Car car = new Car("Jeff","abc123",2016,10000); // First create a car
+        ArrayList<Car> cars = new ArrayList<>(); // Create a car's arraylist
         
-        System.out.print("New owner here: ");
-        String owner = read.nextLine();
-        System.out.print("New id here: ");
-        String id = read.nextLine();
-        System.out.print("New years here: ");
-        int year = read.nextInt();
-        System.out.print("New km here: ");
-        float km = read.nextFloat();
+        for(int i = 0; i<4; i++){ // Ask for data
+            System.out.print("Owner here: ");
+            String owner;
+            owner = read.nextLine();
+            System.out.print("Id here: ");
+            String id = read.nextLine();
+            System.out.print("Years here: ");
+            int year = read.nextInt();
+            System.out.print("Km here: ");
+            float km = read.nextFloat();
+            read.nextLine();
+            Car car = new Car(owner,id,year,km); // First create a car
+            
+            cars.add(car); // And save in arraylist            
+        }
         
-        // Now change the values
-        car.setId(id);
-        car.setOwner(owner);
-        car.setKm(km);
-        car.setYear(year);
+        // Now write the ArrayList(one way to do)
+        System.out.println("-----Car's owners-----");
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.println((i+1)+") "+cars.get(i).getOwner());
+        }
         
-        // Write new data
-        System.out.println("----You new car's data----");
-        System.out.println("Owner: "+car.getOwner());
-        System.out.println("Id: "+car.getId());
-        System.out.println("Year: "+car.getYear());
-        System.out.println("Km: "+car.getKm());
-       
     }
     
 }
