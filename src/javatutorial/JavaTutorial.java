@@ -33,6 +33,7 @@ public class JavaTutorial {
         pw.print("Same ");
         pw.print("line!!!");
         bw.newLine();
+        pw.print("Other Line!!!");
         pw.println("Hi there!");
         
         // Close
